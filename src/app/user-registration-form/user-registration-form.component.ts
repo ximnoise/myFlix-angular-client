@@ -22,15 +22,15 @@ export class UserRegistrationFormComponent implements OnInit {
   }
 
   registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
+    this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
       this.dialogRef.close();
-      console.log(result);
-      this.snackBar.open(result, 'OK', {
+      console.log(response);
+      this.snackBar.open('User registered successfully!', 'OK', {
         duration: 2000
       });
-    }, (result) => {
-      console.log(result);
-      this.snackBar.open(result, 'OK', {
+    }, (response) => {
+      console.log(response);
+      this.snackBar.open(response, 'OK', {
         duration: 2000
       });
     });
