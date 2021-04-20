@@ -1,0 +1,49 @@
+.background {
+  background-color: #c0c5ce;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-card {
+  margin: 0 auto;
+  top: 10px;
+  width: 50%;
+  color: #000;
+  background-color: #a7adba;
+}
+
+.favorites-card-container {
+  margin: 0 auto;
+  width: 70%;
+  top: 50px;
+  color: #000;
+  background-color: #a7adba;
+}
+
+.favorites-cards {
+  top: 50px;
+  width: 300px;
+  padding-bottom: 50px;
+  margin: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+img {
+  display: block;
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+
+

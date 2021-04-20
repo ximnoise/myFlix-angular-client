@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+
 import { UserLoginService } from '../fetch-api-data.service';
+
+import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -21,13 +23,11 @@ export class UserLoginFormComponent implements OnInit {
     public router: Router
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       this.dialogRef.close();
-      console.log(response);
       localStorage.setItem('user', response.user.Username);
       localStorage.setItem('token', response.token);
       this.snackBar.open('User logged in successfully!', 'OK', {
@@ -41,5 +41,4 @@ export class UserLoginFormComponent implements OnInit {
       });
     });
   }
-
 }

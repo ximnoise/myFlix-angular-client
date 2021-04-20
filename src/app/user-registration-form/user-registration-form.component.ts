@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+
 import { UserRegistrationService } from '../fetch-api-data.service';
+
+import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -18,13 +20,11 @@ export class UserRegistrationFormComponent implements OnInit {
     public snackBar: MatSnackBar
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
       this.dialogRef.close();
-      console.log(response);
       this.snackBar.open('User registered successfully!', 'OK', {
         duration: 2000
       });

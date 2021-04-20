@@ -1,4 +1,11 @@
-<mat-card>
+<mat-card class='page-container'>
+  <button
+    mat-icon-button
+    color='basic'
+    [mat-dialog-close]='true'
+  >
+    <mat-icon>close</mat-icon>
+  </button>
   <mat-card-header>
     <mat-card-title>Login!</mat-card-title>
   </mat-card-header>
@@ -7,20 +14,20 @@
       <mat-form-field>
         <input
           matInput
-          [(ngModel)]="userData.Username"
-          type="text"
-          placeholder="Username"
-          name="Username"
+          [(ngModel)]='userData.Username'
+          type='text'
+          placeholder='Username'
+          name='Username'
           required
         >
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
-          [(ngModel)]="userData.Password"
-          type="password"
-          placeholder="Password"
-          name="Password"
+          [(ngModel)]='userData.Password'
+          type='password'
+          placeholder='Password'
+          name='Password'
           required
         >
       </mat-form-field>
@@ -29,8 +36,8 @@
   <mat-card-actions>
     <button
       mat-raised-button
-      (click)="loginUser()"
-      color="primary"
+      (click)='loginUser()'
+      color='primary'
     >
       Login
     </button>

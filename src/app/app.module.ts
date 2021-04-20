@@ -19,10 +19,18 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
+import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { DetailsDialogComponent } from './details-dialog/details-dialog.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileUpdateComponent } from './user-profile-update/user-profile-update.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -32,7 +40,14 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    NavBarComponent,
+    DirectorDialogComponent,
+    GenreDialogComponent,
+    DetailsDialogComponent,
+    UserProfileComponent,
+    UserProfileUpdateComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

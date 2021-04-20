@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #c0c5ce;
+}
+
+.mat-card {
+  margin: 20px;
+  width: 300px;
+  padding-bottom: 50px;
+  background-color: #fff;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  display: block;
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
