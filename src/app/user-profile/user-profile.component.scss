@@ -3,12 +3,6 @@
   height: auto;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .profile-card {
   margin: 0 auto;
   top: 10px;
@@ -17,12 +11,16 @@
   background-color: #a7adba;
 }
 
-.favorites-card-container {
-  margin: 0 auto;
-  width: 70%;
+h1 {
+  position: relative;
   top: 50px;
-  color: #000;
-  background-color: #a7adba;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .favorites-cards {
@@ -33,7 +31,7 @@
   background-color: #fff;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
