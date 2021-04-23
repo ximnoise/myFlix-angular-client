@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+// API call
 import { UserRegistrationService } from '../fetch-api-data.service';
 
+// Angular material
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -22,18 +24,20 @@ export class UserRegistrationFormComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  /**
+   * Function that sends user input to the API endpoint to create new user
+   */
   registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
+    this.fetchApiData.userRegistration(this.userData).subscribe((res) => {
       this.dialogRef.close();
       this.snackBar.open('User registered successfully!', 'OK', {
         duration: 2000
       });
-    }, (response) => {
-      console.log(response);
-      this.snackBar.open(response, 'OK', {
+    }, (res) => {
+      console.log(res);
+      this.snackBar.open(res, 'OK', {
         duration: 2000
       });
     });
   }
-
 }

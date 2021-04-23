@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+// API calls
 import {
   GetUserService,
   GetAllMoviesService,
@@ -7,10 +9,11 @@ import {
   DeleteUserService
 } from '../fetch-api-data.service';
 
+// Angular material
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 
+// Component
 import { UserProfileUpdateComponent } from '../user-profile-update/user-profile-update.component';
 
 @Component({
@@ -33,10 +36,16 @@ export class UserProfileComponent implements OnInit {
     public router: Router
   ) { }
 
+  /**
+   * Call function on page load to retrieve user information's
+   */
   ngOnInit(): void {
     this.getUser();
   }
 
+  /**
+   * Function to get user information's from API endpoint
+   */
   getUser(): void {
     this.fetchUserData.getUser().subscribe((res: any) => {
       this.user = res;
@@ -44,6 +53,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to get all movies from API endpoint
+   */
   getMovies(): void {
     this.fetchMovieData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
@@ -51,6 +63,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to filter in all movies for user favorites
+   * @returns favorites
+   */
   filterFavorites(): void {
     this.movies.forEach((movie: any) => {
       if (this.user.FavoriteMovies.includes(movie._id)) {
@@ -60,6 +76,11 @@ export class UserProfileComponent implements OnInit {
     return this.favorites;
   }
 
+  /**
+   * Function to delete favorites from user
+   * @param id
+   * @param title
+   */
   removeFavorites(id: string, title: string): void {
     this.fetchDeleteFavData.deleteFavoriteMovie(id).subscribe(() => {
       this.snackBar.open(`${title} has been removed from your favorites!`, 'OK', {
@@ -71,6 +92,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Function that allows the user to delete their profile
+   */
   deleteUser(): void {
     let check = confirm('Are you sure you want to delete your profile?');
     if (check) {
@@ -87,6 +111,9 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  /**
+   * Function to open dialog showing user profile update dialog
+   */
   profileUpdateDialog(): void {
     this.dialog.open(UserProfileUpdateComponent, {
       width: '350px'

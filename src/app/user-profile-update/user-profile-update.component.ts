@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+// API call
 import { EditUserService } from '../fetch-api-data.service';
 
+// Angular material
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -21,6 +23,9 @@ export class UserProfileUpdateComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  /**
+   * Function that send user input to the API endpoint to edit user information
+   */
   editUser(): void {
     this.fetchUserData.editUser(this.userData).subscribe((res) => {
       this.dialogRef.close();

@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
+//Angular material
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -9,6 +10,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DetailsDialogComponent implements OnInit {
 
+  /**
+   * Injects movie title, imagePath, description, director and genre into class
+   * from movie-card to use in details-dialog
+   * @param data
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

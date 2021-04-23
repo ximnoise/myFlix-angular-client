@@ -1,27 +1,30 @@
-# MyFlixAngularClient
+# myFlix-angular-client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+![](/myFlix-showcase.gif)
 
-## Development server
+This project is an Angular application that allows users to get information about movies, genres, and directors. Users can also save movies in their list of favorites and edit details of their profile. This application uses my existing server-side REST API and MongoDB database. [See here](https://github.com/ximnoise/myFlix-backend)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[The project is deployed here.](https://ximnoise.github.io/myFlix-angular-client/welcome)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- App display a welcome view where users will be able to either log in or register an account.
+- Once authenticated, the user now view all movies.
+- Upon clicking on a particular movie, users will be taken to a single movie view, where
+additional movie details will be displayed. The single movie view will contain the following additional features:
+  - A button that when clicked takes the user to the ​director view,​ where details about the director of that particular movie will be displayed.
+  - A button that when clicked takes the user to the ​genre view,​ where details about that particular genre of the movie will be displayed.
 
-## Build
+## Development Server
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To run this project on a development server, run the following command, then navigate tom the localhost port stated in your terminal.
+```
+ng serve
+```
 
-## Running unit tests
+## Technologies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Requires [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
+- Written with [Angular](https://angular.io)
+- Designed with [Angular Material](https://v7.material.angular.io)
+- Documented with [Typedoc](https://typedoc.org)
